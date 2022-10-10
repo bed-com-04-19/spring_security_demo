@@ -21,6 +21,7 @@ import javax.validation.constraints.PositiveOrZero;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
+@PostAuthorize("hasRole('ROLE_ADMIN') and hasRole('ROLE_EXECUTIVE')")
 @RequestMapping("/api/v1/users")
 @Validated
 public class UserController {
